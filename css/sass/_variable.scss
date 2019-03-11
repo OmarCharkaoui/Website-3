@@ -1,0 +1,16 @@
+/* main color of the website */
+$main-color : #3BCEB5;
+$color-white : white;
+$color-red : red;
+$color-box : #eff5f5;
+$color-paragraph-gray : #777;
+
+$linear-gardient : linear-gradient(45deg, rgba(29, 224, 153, 0.8), rgba(29, 200, 205, 0.8));
+/* linear gardient of header */
+$linear-gardient-header : linear-gradient(45deg, #1de099, #1dc8cd);
+
+$linear-gardient-new: linear-gradient(45deg,#1de099,rgba(0, 0, 0, 0.06)) ;
+/* Box Shadow */
+%box-shadow {
+    box-shadow : 4px 0px 5px 0px #ffffff00;
+}

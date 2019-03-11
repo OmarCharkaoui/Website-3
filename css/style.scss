@@ -1,0 +1,1124 @@
+@import '../css/sass/variable';
+@import '../css/sass/buttons';
+@import '../css/sass/typography';
+@import '../css/sass/media';
+/* General rules */
+
+body {
+    /* height: 9000px; */
+    overflow-x: hidden;
+}
+
+/* nav mobile */
+
+.toggle {
+    /* background-color: gold; */
+    height: 30px;
+    width: 40px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 900;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    &:hover .one ,
+    &:hover .two ,
+    &:hover .Three ,
+    &:hover .four ,
+    &:hover .five { background-color: $color-red; }
+    span {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: $color-white ;        
+        transition: all .3s ease;
+    }
+    .one {top: 0px;}
+    .two {top: 6px;}
+    .Three {top : 12px;}
+    .four {top: 18px;}
+    .five {top: 24px;}
+}
+@include  MaxMedium {.toggle {display: block;}}
+@include  MinMedium {.toggle {display: none;}}
+.nav-mobile {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.993);
+    z-index: 901;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    /* transition: all 3s ease-in-out; */
+
+    .navbar-navigation-mobile {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        li {
+           margin-top: 10px;
+          
+
+            a {
+                color: $color-white ;
+                font-size: 40px;
+                text-decoration: none;
+                transition: all .3s ease-in-out;
+                text-align: center;
+
+                &:hover {
+                    border-top: 3px solid $color-red;
+                }
+            }
+            
+        }
+    }
+
+    span {
+     
+       
+        .CloseIcon {
+            cursor: pointer;
+            position: fixed;
+            top: 10%;
+            left:10%;
+            font-size: 40px;
+            color :$color-white ;
+            &:hover {
+                color: $color-red;
+            }
+        }
+       
+    }
+   
+}
+
+
+
+
+/* Header */
+.header {
+    /* background-color: black; */
+    height: 92px;
+    padding: 10px 0;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 800; 
+    transition: all 0.5s;
+    @include  Sm-To-md {
+        #mycontainer {max-width: 100% !important;}   
+    }
+    nav {
+        height: 72px;
+      
+        
+        .wrapper {
+                display: flex;
+                height: 100%;
+                
+               
+         .navbar-logo {
+            
+            a {
+                display: block;
+                color: $color-white ;
+                font-size: 30px;
+                font-weight: 700;
+                text-decoration: none;
+                line-height: 72px;
+             
+                
+                span {
+                        color: $color-red;
+                }
+                &:hover {
+                    color: $color-white  !important;
+                }
+
+            }
+        }
+        .navbar-navigation {
+            padding: 0;
+            margin: 0;
+            list-style: none !important;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+           @include MaxMedium {
+                display: none;
+            
+            }
+        
+             li {
+                margin-left: 13px;
+              
+                a {
+                    color: $color-white !important;
+                    margin-left: 10px;
+                    font-size: 17px;
+                    font-weight: 400;
+                    letter-spacing: 1px;
+                    text-decoration: none;
+                    &:hover  {
+                    
+                        border-top: 2px solid $color-red;
+                }
+                
+             }
+             .active-link {
+                border-top: 2px solid $color-red; 
+            }
+           
+        }
+    }
+    }
+
+}
+
+}
+
+
+/* Start image Section */
+.image-section {
+    background-image: $linear-gardient, url("../img/intro-bg.jpg");
+    height: 100vh;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    background-attachment: fixed;
+    position: relative;
+    
+}
+ 
+
+.image-section-text {
+position: absolute;
+z-index: 9;
+top: 100px;
+left: 0px;
+right: 0px;/* This right work like width 100% */
+height: calc(50% - 78px); 
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+h1 {
+    color: $color-white;
+    font-size: 50px;
+    font-weight: 300;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+        span {
+        font-size: 60px;
+           strong {
+        color: $color-red;
+       }
+    }
+   
+}
+p {
+    font-size: 23px;
+    color: $color-white;
+    margin-bottom: 20px;
+    @include  MaxMedium { font-size: 19px;}
+}
+.btn-started {@extend %btn-style;}
+
+
+}
+.image-section-picture {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    text-align: center;
+    overflow: hidden;
+    
+    .image-section-picture-1 {
+        position: absolute;
+        z-index: 1;
+        left: calc(50% + 60px);
+        bottom: 0;
+        top: 5%;
+        z-index: 6;
+        animation-duration: 0.6s;
+        animation-delay: 0.2s;
+        animation-name: fadeInUp;
+        @include MaxMedium {
+            position: static;
+            padding-top: 30px;
+        }
+        
+    
+    }
+    .image-section-picture-2 , .image-section-picture-3 {
+        @include MaxMedium  {display: none;}
+        
+    }
+    .image-section-picture-2 {
+      
+        position: absolute;
+       
+        top: 18%;
+        bottom: 0;
+        left: calc(50% - 180px);
+        z-index: 5;
+        animation-duration: 0.6s;
+        animation-delay: 0.4s;
+        animation-name: fadeInUp;
+    }
+    .image-section-picture-3 {
+      
+        position: absolute;
+        z-index: 1;
+        top: 33%;
+        bottom: 0;
+        left: calc(50% - 384px);
+        z-index: 4;
+        animation-duration: 0.6s;
+        animation-delay: 0.6s;
+        animation-name: fadeInUp;     
+    }
+}
+/* End image Section */
+
+/* Start About Us Section */
+.About-Us {
+
+@extend %padding-boxses;
+background-color: $color-box;
+
+.box-text {
+    text-align: center;
+    h3 {@extend %h3;}
+    .divder {@extend %divder ;}
+    p {
+        @extend %p;
+        @include MaxMedium {line-height: 1.2;}
+    }
+}
+.box-img-text {
+    @extend %padding-boxses;
+    img {
+        animation-duration: 0.6s;
+        animation-delay: 0.2s;
+        animation-name: fadeInLeft;     
+    }
+}
+.content-text{
+    padding: 0 20px 0 40px ;
+    color: $color-paragraph-gray;
+    animation-duration: 0.6s;
+    animation-delay: 0.2s;
+    animation-name: fadeInRight;  
+  
+    .First-p {
+        margin-top: 10px;
+        font-size: 35px;
+        line-height: 1.1;
+        letter-spacing: 1px;
+        font-weight: 400;
+        margin-bottom: 19px;
+        
+    }
+    .Second-p {
+        font-style :italic;
+        font-size: 20px;
+        font-weight: 200;
+        margin-bottom: 19px;
+    }
+    .Third-p {
+        font-weight: 600;
+      
+        margin-bottom: 19px;
+
+    }
+    .icon-text {
+        margin-bottom: 27px;
+        margin-top: 27px;
+        li {
+            font-size: 20px;
+            font-weight: 200;
+            margin-top: 14px;    
+
+            i {
+                margin-right: 5px;
+                color: $main-color;
+            }
+    
+        }
+    }
+    .four-p {
+        font-weight: 600;
+    }
+}
+}
+/* Start Features Section */
+.Features {
+    @extend %padding-boxses;
+    text-align: center;
+    background-color: $color-white;
+    @include  Sm-To-md {
+        #mycontainer-feature {
+            max-width: 100% !important;
+        }
+        
+    }
+
+    img {
+        animation-duration: 0.6s;
+        animation-delay: 0.5s;
+        animation-name: fadeInLeft;     
+    }
+    h3 {
+        @extend %h3;
+        @include  MaxMedium {padding-top:20px;}
+    }
+    .divder {
+        @extend %divder ;
+    }
+    .boxses {
+        padding: 33px 10px ;
+        @include  MaxMedium {padding-top:20px;}
+    
+        .box {
+            padding: 10px 5px;
+            margin-bottom: 10px;
+            animation-duration: 0.6s;
+            animation-delay: 0.5s;
+            animation-name: fadeInRight;  
+            @include ExSm-To-Sm {padding: 0;margin: 0;}
+            i {
+                font-size: 30px;
+                color: $main-color ;
+                margin-bottom: 10px;
+                @include ExSm-To-Sm {font-size: 20px;}
+            }
+            h5 {
+                
+                font-size: 25px;
+                font-weight: 100;
+                margin-bottom: 10px;
+               
+            }
+            p {
+                @extend %p;
+                margin-bottom: 10px;
+            }
+           
+        }
+    }
+    
+}
+/* Start info-img-1 Section  */
+
+.info-img-1 {
+ @extend %padding-boxses;
+ background-color: $color-box;
+ @include  Sm-To-md {
+    #mycontainer-infoImg-1 {
+        max-width: 100% !important;
+    }
+    
+}
+ h2 {
+    @extend %h2;
+    @include  MaxMedium {padding-top:8px;}
+ }
+ p{
+    color:$color-paragraph-gray;
+ }
+    p:first-of-type{
+        font-style :italic;
+        font-size: 20px;
+        font-weight: 200;
+        margin-bottom: 19px;
+        
+    }
+    p:nth-of-type(2){
+        font-size: 19px;
+    }
+    p:last-of-type{
+        font-size: 20px;
+    }
+    
+
+
+}
+/*Start info-img-2 Section   */
+.info-img-2 {
+    @extend %padding-boxses;
+    background-color: $color-white;
+    @include  Sm-To-md {
+        #mycontainer-infoImg-2 {
+            max-width: 100% !important;
+        }
+        
+    }
+
+    h2 {
+        @extend %h2;
+        @include  MaxMedium {padding-top:8px;}
+    }
+    .box-icon {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        i{
+            font-size: 50px;
+            color: $main-color;
+            @include Sm-To-md {font-size: 32px;}
+            @include ExSm-To-Sm {font-size: 20px;}
+        }
+        p{
+            margin-left: 20px;
+            margin-bottom: 0;
+            color:$color-paragraph-gray;
+            @include ExSm-To-Sm {margin-left: 8px;}
+        }
+
+    }
+
+}
+/*Start info-img-3 Section   */
+.info-img-3 {
+    @extend %padding-boxses;
+    background-color: $color-box;
+    @include  Sm-To-md {
+        #mycontainer-infoImg-3 {
+            max-width: 100% !important;
+        }
+        
+    }
+
+    @include  MaxMedium {padding-top:60px;}
+    h2 {
+       @extend %h2;
+    }
+    p{
+       color:$color-paragraph-gray;
+    }
+    p:nth-of-type(1) {
+        font-style :italic;
+        font-size: 20px;
+        font-weight: 200;
+        margin-bottom: 19px;
+    }
+    p:nth-of-type(2) {
+        font-size: 18px;
+    }
+  
+    .icon-desktop {
+    float: left;
+    font-size: 50px;
+    margin: 10px 30px;
+    color :$main-color;
+    @include Sm-To-md {font-size: 30px;}
+    @include ExSm-To-Sm {font-size: 27px;}
+    }
+    p:last-of-type {
+        margin-top: 5px;
+        font-style: italic;
+        font-size: 20px;
+    }
+}
+/* Start Call To Action */
+.call-to-action {
+    height: 300px;
+    @extend %padding-boxses;
+    color: $color-white;
+    background-image: $linear-gardient-new , url(../img/call-to-action-bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    @include  Sm-To-md {
+        #mycontainer-action {
+            max-width: 100% !important;
+        }
+    }
+    @include ExSm-To-Sm { 
+        padding: 0px;
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h2 {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        font-size: 28px;
+        font-weight: 700;
+        @include  MaxMedium {font-size: 26px;}
+        
+    }
+    p {
+        font-size: 18px;
+        font-weight: 100;
+        line-height: 1.2;
+        @include  MaxMedium {font-size: 16px;}
+    }
+    .wrapper-btn{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    .action-btn {
+        @extend %btn-style ;
+        background: none;
+        font-size: 20px;
+        font-weight: 600;  
+        &:hover {
+            color:$color-box;
+            background-color:$main-color;
+          
+        }
+    }
+}
+}
+
+/* Start More Feautres */
+
+.More-Features{
+    @extend %padding-boxses;
+    background-color: $color-box;
+    @include  Sm-To-md {
+        #mycontainer-more-features {
+            max-width: 100% !important;
+        }
+       
+    }
+    .box-more-Features {
+        text-align: center;
+
+        h3{
+                @extend %h3;
+        }
+        .divder{
+            @extend %divder;
+        }
+        p{
+            @extend %p;
+        }
+    }
+    .wrapper-box-features {
+        padding-top: 40px;
+        .box-Features {
+            background-color: $color-white;
+            padding: 40px 33px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             @extend %box-shadow ;
+             @include  Sm-To-md {margin-bottom: 27px; padding:15px; }
+             @include ExSm-To-Sm {padding: 10px; margin-bottom: 10px;}
+            i{
+
+             font-size: 60px;
+             color: $main-color;
+             @include ExSm-To-Sm {font-size:30px;margin-top: 20px;}
+             @include  Sm-To-md {font-size: 30px;}
+             
+            }
+            .box-text {
+                display: flex;
+                flex-direction: column;
+                margin-left: 40px;
+                @include ExSm-To-Sm {margin-left: 10px;}
+                h4{
+                    @extend %h3;
+                    font-size: 20px;
+                    font-weight: 800;
+                    margin-bottom: 10px;
+                }
+                p{
+                    @extend %p;
+                    font-size: 16px;
+                    font-weight: 300;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}
+/* Start OUr sponsor */
+.sponsor{
+    @extend %padding-boxses;
+    background-color: $color-white;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    @include  Sm-To-md {
+        #mycountainer-sponsor {
+            max-width: 100% !important;
+        }
+        
+    }
+    
+    img{
+        opacity: 0.4;
+        transition: all .3s ease-out;
+        &:hover {
+            opacity: 1;
+        }
+        @include  MaxMedium {padding-top: 25px;padding-bottom: 25px;}
+    }
+}
+/* Start Pricing */
+.Princing{
+    background-color: $color-box;
+    @extend %padding-boxses;
+    text-align: center;
+    @include  Sm-To-md {
+        #mycountainer-pricing {
+            max-width: 100% !important;
+        }
+        
+    }
+   
+    h3 {
+        @extend %h3;
+    }
+    .divider{
+        @extend %divder;
+    }
+    p{
+        @extend %p;
+    }
+
+    .box-pricing{
+        margin-top: 40px;
+     
+        .box-princing-Model{
+            background-color: $color-white ;
+            padding:30px;
+            text-align: center;
+            @extend %box-shadow;
+            @include  MaxMedium {margin-bottom: 10px;}
+
+            h4{
+                font-size:37px;
+                font-weight: 100;
+                color: $color-paragraph-gray;
+                margin-bottom: 15px;
+                font-style: italic;
+            }
+            h5 {
+                font-size: 50px;
+                color: $main-color;
+                font-weight: 200;
+                margin-bottom: 20px;
+                sup {
+                    color: $main-color;
+                    font-size: 30px;
+                    font-weight: 100;
+                    top:-25px;
+                }
+                span{
+                    color: $color-paragraph-gray;
+                    font-size: 20px;
+                    font-weight: 100;
+                    margin-left: 5px;
+                }
+            }
+            ul {
+                li{
+                        margin-bottom: 12px;
+                        font-size: 17px;
+                        font-weight: 200;                              
+                    i{
+                       font-size:20px;
+                      /*  margin-left: 40px; */
+                       color: $main-color;    
+                    }
+                }
+              }
+            }
+            .box-princing-Model.actived {
+                border: 2px solid $main-color;
+            }
+            .get-started-btn{
+                @extend %btn-style;
+                border: 1px solid $main-color;
+                background-color: $color-paragraph-gray;
+                color:$color-white;
+                font-weight: bold;
+                font-size: 15px;
+                &:hover {
+                    background-color: $main-color;
+                    color : $color-white;
+                  
+                }
+            }
+            .get-started-btn.active-btn {
+                background-color: $main-color;
+                color : $color-white;
+            }
+        }
+    }
+
+/* Start Asked Question */
+.Asked-Questions{
+
+        @extend %padding-boxses;
+        text-align: center;
+        background-color: $color-white;
+        @include  Sm-To-md {
+            #mycontainer-asked{
+                max-width: 100% !important;
+               
+            }
+            
+        }
+    .divider{
+            @extend %divder;
+        }
+    h3 {
+        @extend %h3;
+    }
+    p{
+        @extend %p;
+    }
+    .accordion-Questions{
+        @extend %padding-boxses;
+        text-align: left;
+        .card{
+            border: none;
+            background: none;    
+        }
+        .card-header {
+            text-align: left;
+            position: relative;
+            cursor: pointer;
+            @extend %h3;
+            font-size: 20px;
+            margin-bottom: 0;
+            background: none; 
+            font-weight: 600;
+           
+        }
+      
+        .card-header.collapsed::before{
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f067";
+            position: absolute;
+            right: 10px;
+            color: $main-color;
+        }
+        .card-header::before{
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            right: 10px;
+            content: "\f068";
+            color:$main-color;
+        }
+        .card-body{
+            font-size: 17px;
+        }
+    }
+
+}
+
+/* Start Our Team */
+.OurTeam{
+    @extend %padding-boxses;
+    padding-bottom: 0px;
+    text-align: center;
+    background-color: $color-box;
+.divider{
+        @extend %divder;
+    }
+h3 {
+    @extend %h3;
+}
+p{
+    @extend %p;
+}
+.teams{
+    @extend %padding-boxses;
+    padding-bottom: 0;
+    color:$color-paragraph-gray;
+    @include  Sm-To-md {
+        #mycontainer-teams{
+            max-width: 100% !important; 
+        }
+    }
+    @include  Sm-To-md {
+        padding-bottom: 0px;
+    }
+    .box-X{
+       @include  MaxMedium {
+           height: 50%;
+           margin-bottom: 10px;
+           
+       } 
+    }
+
+    img{
+        height: 50%;
+        @include  MaxMedium {
+         height: 300px;
+            
+        } 
+    }
+    h2 {
+        font-size: 20px;
+        margin-top: 16px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+    h6{
+        font-size: 13px;
+        font-style: italic;
+     
+    }
+    .box-Social{
+        opacity: .6;
+        margin-top: 16px;
+     
+
+    }
+    .box-Social i{
+        cursor: pointer;
+        margin-right: 4px;
+        font-size:19px;
+        &:hover {
+            color: $main-color;
+        }
+    }
+
+}
+
+}
+/* Start Gallery */
+.Gallery{
+    @extend %padding-boxses;
+    text-align: center;
+    background-color: $color-white;
+    @include  Sm-To-md {
+        padding-top: 29px;
+    }
+.divider{
+        @extend %divder;
+    }
+h3 {
+    @extend %h3;
+}
+p{
+    @extend %p;
+}
+.gallery-item {
+    @extend %padding-boxses;
+    
+   .item-wrapper {
+    overflow: hidden;
+
+    img {
+        transition: all ease-in-out 0.4s;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+   }
+}
+}
+/* footer-form */
+.footer-form{
+    @include  Sm-To-md {
+        #mycontainer-footer{
+            max-width: 100% !important;
+           
+        }
+        
+    }
+    .box-info{
+
+        .logo-footer{
+            display: block;
+            color: rgba(0, 0, 0, 0.459);
+            font-size: 40px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-bottom: 20px;
+            span {
+                color: $color-red;
+            }
+        }
+        p{
+            margin-bottom: 20px;
+        }
+    .box-social-footer{
+        a {
+               display: inline-block;               
+               border-radius: 50%;
+               border: 1px solid $main-color;
+               background-color: $color-white;
+               margin-right: 2px;
+               &:hover {
+                   background-color: $main-color;
+                   i{
+                       color: $color-white;
+                   }
+               }
+            i{
+                width: 36px;
+                padding: 10px;
+                text-align: center;
+                color:$main-color;
+                
+            }
+
+           }
+           @include  MaxMedium { margin-left: 100px;
+                                 margin-bottom: 20px;
+                                }
+        }
+    }
+
+    .box-contact
+    {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 40px;
+        i{
+            color:$main-color;
+            align-self: center;
+            flex-grow: 1;
+            font-size:20px;
+            text-align: center;
+            @include Sm-To-md {font-size: 11px;margin-right: 13px}
+        }
+        p{
+            margin: 0;
+            flex-grow: 3;
+            color: $color-paragraph-gray;
+            font-size:17px;
+            @include Sm-To-md {font-size: 16px;}
+        }
+        @include  MaxMedium { margin-left: 50px;}
+
+    }
+    .form-contact input , .form-contact textarea {
+        border-radius:0;
+        box-shadow: none;
+    }
+    .form-contact input[type=submit] {
+          @extend %btn-style ;
+          background:$linear-gardient-header;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          &:hover {
+              background: $linear-gardient;
+              color:$color-white;
+          }
+    }
+
+}
+
+/* Start Footer Info */
+.footer-copyright {
+    background-color: $color-white;
+   box-shadow: 4px 0px 5px 0px #0000005d;
+   padding: 20px 10px 0;
+   color: $color-paragraph-gray;
+   font-weight: 100;
+   @include  Sm-To-md {
+    #mycontainer-footer-copyright{
+        max-width: 100% !important;
+       
+    }
+    
+}
+    
+    p:first-of-type {
+       
+        margin-bottom: 0;
+       
+    }
+    
+    p:last-of-type {
+        
+        a{
+            text-decoration: none;
+            color: $main-color;
+            font-weight: 100;
+            text-transform: lowercase;
+        }
+    }
+    ul {
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
+        
+        li{
+            margin-left: 10px;
+
+            a{
+                text-decoration: none;
+                color: $color-paragraph-gray;
+                font-weight: 100;
+                &:hover{
+                    color: $main-color;
+                    
+                }
+               
+            }
+        }
+        
+    }
+}
+
+/* Back to the top */
+.back-top{
+    
+    background: $linear-gardient-header;
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    z-index: 900;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+    height: 29px;
+    width: 60px;
+   display: none;
+    i{
+        display: block;
+        position: absolute;
+        top: 4px;
+        left: 21px;
+        font-size: 21px;
+        color: $color-white;
+    }
+}
+
+
+
+
+
+
+
+/* ------------------------ For Something more important --------------------- */
+
+/* add class Header fixed when scroling add in jquery */
+.header-fixed {
+    background:$linear-gardient-header;
+    padding:0;
+    height: 67px;
+    transition: all 0.5s;
+}
+

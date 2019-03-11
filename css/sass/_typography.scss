@@ -1,0 +1,39 @@
+
+/*  paragraph */
+%p {
+ margin-top: 17.5px;
+ font-size: 18px;
+ margin-bottom: 0;
+ color: $color-paragraph-gray ;
+ font-style: italic;
+}
+
+/* Heading */
+%h3 {
+    font-weight: 300;
+    font-size: 38px;
+    margin-bottom: 17.5px;
+}
+
+%h2 {
+    line-height: 1.2;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Other Typography */
+
+/* Padding boxes */
+
+%padding-boxses {
+    padding: 70px 0px 30px;
+}
+/* divder under heading */
+%divder {
+    border-radius: 50%;
+    width: 100px;
+    height: 6px;
+    background-color: $main-color;
+    margin: 0 auto;
+}

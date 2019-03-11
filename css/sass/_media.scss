@@ -1,0 +1,64 @@
+//--------------------------
+@mixin MinSmall {
+    @media(min-width: 576px) {
+        @content;
+    }
+}
+@mixin MaxSmall {
+    @media(max-width: 575px) {
+        @content;
+    }
+}
+//---------------------------
+@mixin MinMedium {
+    @media(min-width: 768px) {
+        @content;
+    }
+}
+@mixin MaxMedium {
+    @media(max-width: 767px) {
+        @content;
+    }
+}
+//---------------------------
+@mixin MinLarge {
+    @media(min-width: 992px) {
+        @content;
+    }
+}
+@mixin MaxLarge {
+    @media(max-width: 991px) {
+        @content;
+    }
+}
+//---------------------------
+@mixin MinExtra-Large {
+    @media(min-width: 1200px) {
+        @content;
+    }
+}
+@mixin MaxExtra-Large {
+    @media(max-width: 1199px) {
+        @content;
+    }
+}
+
+//--------Toggle between values-------
+//  576px to 767px
+@mixin ExSm-To-Sm {
+    @media (min-width: 576px) and (max-width: 767px) {
+        @content;
+    } 
+}
+// 768px to 991px Good
+@mixin Sm-To-md {
+    @media (min-width: 768px) and (max-width: 991px) {
+        @content;
+    } 
+}
+// 992px to 1199px Good
+@mixin md-To-lg {
+    @media (min-width: 992px ) and (max-width: 1199px) {
+        @content;
+    } 
+}
